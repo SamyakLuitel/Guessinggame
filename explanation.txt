@@ -1,0 +1,78 @@
+-----------------------------------------------------------------------------
+putting #!/bin/bash at the beginning of a script file 
+
+reason 
+It is a convention so the unix/linux(*nix) shell skows what kind of 
+interpreter to run.[1]
+
+the program should be run by adding a special line of text to the beginning of
+our program called a shebang. The shebang always begins with #! followed by 
+the path to the program which will execute the code in our file.[2]
+
+references
+1) https://stackoverflow.com/questions/8967902/why-do-you-need-to-put-bin-bash-at-the-beginning-of-a-script-file
+ 
+2) week 3 Making Program Executable
+-----------------------------------------------------------------------------
+Commenting in Bash Script 
+Writing Comments in Bash
+
+Bash ignores everything written on the line after the hash mark (#).
+The only exception to this rule is when the first line on the script starts
+with the #! characters. This sequence of characters is called Shebang and is 
+used to tell the operating system which interpreter to use to parse the rest 
+of the file.[1]
+
+A word or line beginning with # causes that word and all remaining characters 
+on that line to be ignored.[2]
+
+references
+1)https://linuxize.com/post/bash-comments/
+
+2)https://bash.cyberciti.biz/guide/Shell_Comments
+
+
+-----------------------------------------------------------------------------
+getting true count of files in the directory
+
+
+first I had used 
+true_count=$(ls|wc -l)
+but it only counted the non-hidden files
+
+then i used 
+true_count=$(ls -a|wc -l)
+but it counted 2 extra because 
+ls -a
+showed 
+. and .. 
+
+I don't know why . and .. is showed
+since . and .. are present in ecery directory I decided to subtract 2 from true_count
+let true_count=$true_count-2
+
+-----------------------------------------------------------------------------
+
+
+I also gave users option to count file without hidden files
+-----------------------------------------------------------------------------
+
+make
+
+make The purpose of the make utility is to determine automatically which pieces of a large program need to 
+be recompiled, and issue the commands to recompile them. you can use make with any programming language whose 
+compiler can be run with a shell command.[1]
+
+references
+1) https://www.tutorialspoint.com/unix_commands/make.htm
+
+2) week 2 Make
+
+-------------------------------------------------------------------------------
+reading number of lines in file 
+
+wc -l yourTextFile 
+
+references
+man wc 
+--------------------------------------------------------------------------------
